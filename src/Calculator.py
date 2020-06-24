@@ -15,6 +15,10 @@ def mul(a, b):
     return int(a) * int(b)
 
 
+def sq(a, b):
+    return int(a)**2
+
+
 class Calculator:
     result = 0
 
@@ -35,4 +39,8 @@ class Calculator:
 
     def mul(self, a, b):
         self.result = mul(a, b)
+        return self.result
+
+    def sq(self, a, b):
+        self.result = sq(a, b)
         return self.result
