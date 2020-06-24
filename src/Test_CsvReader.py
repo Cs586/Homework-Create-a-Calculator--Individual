@@ -1,12 +1,7 @@
 import unittest
-from CsvReader import CsvReader, ClassFactory
+from CsvReader import CsvReader
 from pprint import pprint
 from pathlib import Path
-
-
-def absolutepath(filepath):
-    relative = Path(filepath)
-    return relative.absolute()
 
 
 class MyTestCase(unittest.TestCase):
