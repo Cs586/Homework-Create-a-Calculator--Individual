@@ -13,6 +13,7 @@ class CsvReader(object):
     data_a = []
     data_sq = []
     data_sr = []
+    data_m = []
 
     def __init__(self, filepath):
         with open(filepath) as text_data:
@@ -44,3 +45,9 @@ class CsvReader(object):
         for row in self.data_d:
             addition_data.append(row)
         return addition_data
+
+    def return_data_as_mul(self):
+        mul_data = []
+        for row in self.data_m:
+            mul_data.append(row)
+        return mul_data

@@ -43,6 +43,13 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result_add)
             self.assertEqual(self.calculator.result, result_add)
 
+    def test_mul(self):
+        test_data_mul = CsvReader("/src/CsvData/Multiplication.csv").return_data_as_mul()
+        for row in test_data_mul:
+            result_mul = float(row['Result'])
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result_mul)
+            self.assertEqual(self.calculator.result, result_mul)
+
 
 if __name__ == '__main__':
     unittest.main()
