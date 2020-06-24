@@ -1,5 +1,6 @@
 import math
 
+
 def addition(a, b):
     return float(a) + float(b)
 
@@ -18,10 +19,12 @@ def mul(a, b):
 
 
 def sq(a):
-    return int(a)**2
+    return int(a) ** 2
+
 
 def sqr(a):
     return math.sqrt(a)
+
 
 class Calculator:
     result = 0
@@ -45,10 +48,10 @@ class Calculator:
         self.result = mul(a, b)
         return self.result
 
-    def sq(self, a, b):
+    def sq(self, a):
         self.result = sq(a)
         return self.result
 
-    def sqr(self):
+    def sqr(self, a):
         self.result = sqr(a)
         return self.result
