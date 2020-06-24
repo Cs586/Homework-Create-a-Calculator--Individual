@@ -7,11 +7,11 @@ from pathlib import Path
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.csv_reader = CsvReader('src/CsvData/Addition.csv')
+        self.csv_reader = CsvReader('src/CsvData/Subtraction.csv')
 
     def test_return_data_as_objects(self):
-        people = self.csv_reader.return_data_as_subtraction
-        self.assertIsInstance(people, list)
+        data = self.csv_reader.return_data_as_subtraction
+        self.assertIsInstance(data, list)
         test_class = ClassFactory('person', self.csv_reader.data[0])
 
         for person in people:
