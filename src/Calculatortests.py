@@ -54,7 +54,7 @@ class MyTestCase(unittest.TestCase):
         test_data_mul = CsvReader("/src/CsvData/Square.csv").return_data_as_mul()
         for row in test_data_mul:
             result_sq = float(row['Result'])
-            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result_sq)
+            self.assertEqual(self.calculator.subtract(row['Value 1']), result_sq)
             self.assertEqual(self.calculator.result, result_sq)
 
 
