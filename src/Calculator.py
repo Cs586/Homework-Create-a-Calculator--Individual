@@ -11,6 +11,10 @@ def division(a, b):
     return round(c, 9)
 
 
+def mul(a, b):
+    return int(a) * int(b)
+
+
 class Calculator:
     result = 0
 
@@ -27,4 +31,8 @@ class Calculator:
 
     def division(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def mul(self, a, b):
+        self.result = mul(a, b)
         return self.result
