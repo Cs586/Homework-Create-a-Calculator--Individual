@@ -1,6 +1,7 @@
 import unittest
 from Calculator import Calculator
 from CsvReader import CsvReader
+from pprint import pprint
 
 
 class MyTestCase(unittest.TestCase):
@@ -21,12 +22,20 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.calculator.subtract(2, 2), 0)
         self.assertEqual(self.calculator.result, 0)
 
-    def test_subtraction(self):
-        test_data = CsvReader("src/CsvData/Subtraction.csv").data
+    def test_division(self):
+        test_data = CsvReader("src/CsvData/Division.csv").data
         for row in test_data:
-            result = float(row['Result'])
-            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), -result)
-            self.assertEqual(self.calculator.result, -result)
+            result = round(float(row['Result']), 9)
+            self.assertEqual(self.calculator.division(row['Value 1'], row['Value 2']), result)
+            self.assertEqual(self.calculator.result, result)
+
+    def test_subtraction(self):
+        test_data_sub = CsvReader("/src/CsvData/Subtraction.csv").data
+        for row in test_data_sub:
+            result_sub = float(row['Result'])
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result_sub)
+            self.assertEqual(self.calculator.result, result_sub)
+            pprint(test_data_sub)
 
 
 if __name__ == '__main__':
