@@ -57,6 +57,13 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.subtract(row['Value 1']), result_sq)
             self.assertEqual(self.calculator.result, result_sq)
 
+    def test_sqr(self):
+        test_data = CsvReader("src/CsvData/Square_Root.csv").return_data_as_sqr()
+        for row in test_data:
+            result = round(float(row['Result']), 9)
+            self.assertEqual(self.calculator.division(row['Value 1']), result)
+            self.assertEqual(self.calculator.result, result)
+
 
 if __name__ == '__main__':
     unittest.main()

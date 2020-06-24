@@ -57,3 +57,9 @@ class CsvReader(object):
         for row in self.data_sq:
             sq_data.append(row)
         return sq_data
+
+    def return_data_as_sqr(self):
+        sqr_data = []
+        for row in self.data_sr:
+            sqr_data.append(row)
+        return sqr_data
