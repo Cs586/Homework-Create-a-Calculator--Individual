@@ -1,9 +1,21 @@
 import unittest
+from CsvReader import CsvReader, ClassFactory
+from pprint import pprint
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+
+    def setUp(self) -> None:
+        self.csv_reader = CsvReader('src/CsvData/Addition.csv')
+
+    def test_return_data_as_objects(self):
+        people = self.csv_reader.return_data_as_class('person')
+        self.assertIsInstance(people, list)
+        test_class = ClassFactory('person', self.csv_reader.data[0])
+
+        for person in people:
+            self.assertEqual(person.__name__, test_class.__name__)
+            pprint(vars(people))
 
 
 if __name__ == '__main__':
