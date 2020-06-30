@@ -1,5 +1,3 @@
-import math
-
 
 def addition(a, b):
     return float(a) + float(b)
@@ -23,7 +21,7 @@ def sq(a):
 
 
 def sqr(a):
-    return math.sqrt(a)
+    return int(a)**(1/2)
 
 
 class Calculator:
